@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+.typewriter-name {
+  display: inline-block;
+  min-width: 7ch;
+  border-right: 0.08em solid currentColor;
+  text-align: left;
+  vertical-align: baseline;
+  white-space: nowrap;
+  animation: cursor-blink 0.75s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-name {
+    animation: none;
+  }
+}
