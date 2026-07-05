@@ -7,6 +7,7 @@ const projects = [
       "Find the perfect home tutor near you. We connect students with qualified, trusted, and experienced tutors who provide personalized learning, improve academic performance, and build confidence.",
     technologies: ["React", "Tailwind CSS", "Vite", "Node", "MongoDB"],
     image: "/project-banners/tutor-finder.png",
+    githubUrl: "https://github.com/mrvaibhav06/gv-tutor_1.git",
     liveUrl: "https://www.goodwilledu.in/",
   },
   {
@@ -22,6 +23,7 @@ const projects = [
       "A Zoom-inspired application for joining video meetings, collaborating with a team, and connecting from anywhere.",
     technologies: ["React", "WebRTC", "JavaScript", "Socket.io", "Node", "Express"],
     image: "/project-banners/video-meeting.png",
+    githubUrl: "https://github.com/mrvaibhav06/LoopMeet.git",
     liveUrl: "https://loopmeet-video-call2.onrender.com/",
   },
 ];
@@ -71,7 +73,9 @@ const Projects = () => {
                 </div>
                 <div className="mt-6 flex gap-5 text-sm font-semibold">
                   <a
-                    href="#"
+                    href={project.githubUrl ?? "#"}
+                    target={project.githubUrl ? "_blank" : undefined}
+                    rel={project.githubUrl ? "noreferrer" : undefined}
                     aria-label={`${project.title} source code`}
                     className="flex items-center gap-2 text-slate-300 transition hover:text-cyan-300"
                   >

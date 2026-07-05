@@ -9,11 +9,11 @@ const experiences = [
   },
   {
     role: "Web Development Learner",
-    company: "Independent Study",
+    company: "Personal Projects",
     period: "2024 — 2025",
     description:
       "Developed a strong foundation in HTML, CSS, JavaScript, Git, and modern frontend development through hands-on practice.",
-    technologies: ["HTML", "CSS", "Git"],
+    technologies: ["HTML", "CSS","javascript", "Git"],
   },
 ];
 
