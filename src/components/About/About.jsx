@@ -90,12 +90,22 @@ const About = () => {
             ))}
           </div>
 
-          <a
-            href="#contact"
-            className="mt-9 inline-flex rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-[#171d32]"
-          >
-            Let&apos;s Talk
-          </a>
+          <div className="mt-9 flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              className="inline-flex rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-[#171d32]"
+            >
+              Let&apos;s Talk
+            </a>
+            <a
+              href="/vaibhav-resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex rounded-lg border border-cyan-300 px-6 py-3 font-semibold text-cyan-300 transition hover:bg-cyan-300/10 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-[#171d32]"
+            >
+              Resume PDF
+            </a>
+          </div>
         </div>
       </div>
     </section>

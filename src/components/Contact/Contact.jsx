@@ -8,30 +8,36 @@ import {
 
 const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState("idle");
-  const googleScriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+  const formSubmitUrl =
+    "https://formsubmit.co/ajax/kushwahavaibhav150@gmail.com";
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formElement = event.currentTarget;
     const formData = new FormData(formElement);
 
-    if (!googleScriptUrl) {
-      setSubmitStatus("configuration-error");
-      return;
-    }
-
     setSubmitStatus("submitting");
 
     try {
-      await fetch(googleScriptUrl, {
+      const response = await fetch(formSubmitUrl, {
         method: "POST",
-        mode: "no-cors",
-        body: new URLSearchParams({
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
           name: formData.get("name"),
           email: formData.get("email"),
           message: formData.get("message"),
+          _subject: "New connection request from your portfolio",
+          _template: "table",
+          _honey: formData.get("website"),
         }),
       });
+
+      if (!response.ok) {
+        throw new Error("Message delivery failed");
+      }
 
       formElement.reset();
       setSubmitStatus("success");
@@ -102,6 +108,14 @@ const Contact = () => {
             onSubmit={handleSubmit}
             className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/10 sm:p-8"
           >
+            <input
+              name="website"
+              type="text"
+              tabIndex="-1"
+              autoComplete="off"
+              className="hidden"
+              aria-hidden="true"
+            />
             <div className="grid gap-6 sm:grid-cols-2">
               <label className="block text-sm font-medium text-slate-300">
                 Your name
@@ -156,11 +170,6 @@ const Contact = () => {
               {submitStatus === "error" && (
                 <p className="text-sm font-medium text-red-300">
                   Message could not be sent. Please try again.
-                </p>
-              )}
-              {submitStatus === "configuration-error" && (
-                <p className="text-sm font-medium text-amber-300">
-                  Google Sheets endpoint is not configured yet.
                 </p>
               )}
             </div>

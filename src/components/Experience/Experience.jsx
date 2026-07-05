@@ -2,7 +2,7 @@ const experiences = [
   {
     role: "Frontend Developer",
     company: "Personal Projects",
-    period: "2025 — Present",
+    period: "2025-2026 — Present",
     description:
       "Building responsive web applications with React and Tailwind CSS, focusing on reusable components, accessibility, and clean user interfaces.",
     technologies: ["React", "JavaScript", "Tailwind CSS"],
@@ -10,7 +10,7 @@ const experiences = [
   {
     role: "Web Development Learner",
     company: "Personal Projects",
-    period: "2024 — 2025",
+    period: "2024-2025",
     description:
       "Developed a strong foundation in HTML, CSS, JavaScript, Git, and modern frontend development through hands-on practice.",
     technologies: ["HTML", "CSS","javascript", "Git"],
